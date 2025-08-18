@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Smart Image Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      width: 500px;
+      max-width: 90%;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    input[type="file"], textarea {
+      margin-top: 10px;
+      width: 100%;
+    }
+    .preview {
+      margin-top: 15px;
+    }
+    .preview img {
+      max-width: 100%;
+      max-height: 200px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: #eee;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Image Classifier</h1>
+    
+    <!-- File Upload Section -->
+    <section>
+      <h2>Upload Image File</h2>
+      <input type="file" id="file-input" accept="image/*" onchange="previewImage(event)"/>
+      <div class="preview" id="file-preview"></div>
+      <button onclick="predictFile()">Predict File</button>
+      <div id="file-result"></div>
+    </section>
+    
+    <!-- Base64 Section -->
+    <section>
+      <h2>Paste Base64 Image</h2>
+      <textarea id="base64-input" rows="4" cols="50" placeholder="data:image/png;base64,..."></textarea><br/>
+      <button onclick="predictBase64()">Predict Base64</button>
+      <div id="base64-result"></div>
+    </section>
+  </div>
+
+  <!-- Load JS -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

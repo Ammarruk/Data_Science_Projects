@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>AI Smart Image Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1> AI Smart Image Classifier</h1>
+      <p>Upload or paste an image, and AI will tell you what it sees!</p>
+    </header>
+
+    <!-- File Upload Section -->
+    <section>
+      <h2>Upload Image File</h2>
+      <input type="file" id="file-input" accept="image/*" onchange="previewImage(event)"/>
+      <div class="preview" id="file-preview"></div>
+      <button onclick="predictFile()">Predict File</button>
+      <div id="file-result" class="results"></div>
+    </section>
+    
+    <!-- Base64 Section -->
+    <section>
+      <h2>Paste Base64 Image</h2>
+      <textarea id="base64-input" rows="4" placeholder="data:image/png;base64,..."></textarea>
+      <button onclick="predictBase64()"> Predict Base64</button>
+      <div id="base64-result" class="results"></div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

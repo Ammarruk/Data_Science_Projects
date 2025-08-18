@@ -1,0 +1,114 @@
+/* Global reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  padding: 2rem;
+}
+
+/* Container and layout */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  background: #4a90e2;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+/* Sections */
+section {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #ececec;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+/* File upload and textarea */
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="file"]:focus,
+textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background: #357ab8;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background: #2c6392;
+  transform: translateY(0);
+}
+
+/* Results */
+#file-result,
+#base64-result {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #27ae60;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  section h2 {
+    font-size: 1.3rem;
+  }
+  button {
+    width: 100%;
+  }
+}
